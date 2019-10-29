@@ -1,0 +1,52 @@
+.Mcontainer{
+  width: 100%;
+  height: 100%;
+}
+.Mnav{
+  width: 63vmin;
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.Mitem{
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 1vmin;
+  transition: all .2s;
+  cursor: pointer;
+}
+.Mitem:hover{
+  color: white;
+  background: #000;
+}
+.Mitemed{
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 1vmin;
+  color: white;
+  background: #000;
+}
+.Mmain{
+  width: 100%;
+  height: 80%;
+  position: relative;
+  top: 18%;
+}
+.Mmainitem{
+  height: 100%;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 16px;
+  text-align: center;
+}

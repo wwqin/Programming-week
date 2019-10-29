@@ -1,0 +1,74 @@
+@import "~antd/dist/antd.css";
+html,body,div,img{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  width: 100vw;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+.nav{
+  height: 100%;
+  background: rgba(240, 237, 237, .8);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-style: solid;
+  border-width: 2px;
+}
+.icon-R{
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 4px;
+  height: 10vmin;
+  width: 10vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+  transition: .2s all;
+}
+.icon-R i{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 48px;
+  color: #000;
+  cursor: pointer;
+  transition: .2s all;
+}
+.icon-R:hover{
+  background:rgb(86,85,92);
+  transform: translate(-50%,-55%) scale(1.1);
+}
+.icon-R:hover i{
+  color:rgba(240, 237, 237, .8);
+}
+.icon-T{
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 4px;
+  height: 10vmin;
+  width: 10vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+  transition: .2s all;
+  background:rgb(86,85,92);
+}
+.icon-T i{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 48px;
+  color:rgba(240, 237, 237, .8);
+  cursor: pointer;
+  transition: .2s all;
+}

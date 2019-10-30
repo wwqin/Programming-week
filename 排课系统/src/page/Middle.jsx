@@ -21,10 +21,9 @@ export default class Middle extends React.Component{
         num = 0;
         while(num<item.weekNum){
           let i = parseInt(Math.random()*8),j = parseInt(Math.random()*5)
-          if(!result[i][j]&&!result[i+1][j]&&i!==4){
+          if(!result[i][j]){
             result[i][j] = item.name
-            result[i+1][j] = item.name
-            num+=2
+            num+=1
           }
         }
       })
@@ -37,12 +36,27 @@ export default class Middle extends React.Component{
       this.setState({nums:num})
   }
 
+  getWeeks(Nums){
+    let sum = 0;
+    if(this.props._data[Nums]!=[]){
+      this.props._data[Nums].map(item=>{
+        sum+=item.weekNum
+      })
+    }
+    if(sum>60){
+      alert("error:超出总课时")
+    }
+    return sum
+  }
+
   render () {
+    console.log(this.props._data)
     return (
       <div className="Mcontainer">
         <div className="Mnav">
           {this.props.data!=[]?this.props.data.map((item,index)=><div onClick={() => this.handleNums(index)} className={this.state.nums===index?'Mitemed':'Mitem'} key={index}>{index+1}</div>):''}
         </div>
+        <div>周课时：{this.getWeeks(this.state.nums)} 周总课时：60</div>
         <div className="Mmain">
           {this.props.data[this.state.nums]!==undefined?this.props.data[this.state.nums].map(item => {
             return <Row style={{height:'10%'}}>{item.map(_item => {

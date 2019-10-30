@@ -15,9 +15,11 @@ app.all('*', function(req, res, next) {
 });
 //增加
 app.get('/insert',function(req,res){
+    console.log(req.query)
     MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db("wwqroot");
+        console.log(req.query)
         dbo.collection("wwqdb").insertOne(req.query, function(err, res) {
             if (err) throw err;
             console.log("文档插入成功");
@@ -46,7 +48,9 @@ app.get('/delete', function (req, res) {
     MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db("wwqroot");
-        dbo.collection("wwqdb").deleteOne(req.query, function(err, obj) {
+        var myquery = req.query;
+        myquery.id = parseInt(myquery.id)
+        dbo.collection("wwqdb").deleteOne(myquery, function(err, obj) {
             if (err) throw err;
             console.log("文档删除成功");
             db.close();

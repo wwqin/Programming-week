@@ -118,7 +118,14 @@ function dataInit(data){
 
 export default function madeGraph(data){
   let Sum = 0,arr=[];
+  data.map(item => {
+    item.id = parseInt(item.id)
+    item.term = parseInt(item.term)
+    item.weekNum = parseInt(item.weekNum)
+    item.flag == 'true'||item.flag==true?item.flag=true:item.flag=false
+  })
   let list = dataInit(data)
+  console.log(data)
   for (let i in list) {
     if(list[i].pre[0]!=='无'){
       list[i].pre.map(item => {
@@ -138,8 +145,9 @@ export default function madeGraph(data){
     }
   })
   let L=[[],[],[],[],[],[],[],[]]
+  console.log(list)
   for(let i in list){
-    switch(list[i].term){
+    switch(parseInt(list[i].term)){
       case 1:
         L[0].push(list[i]);
         break;
